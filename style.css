@@ -7,6 +7,7 @@ body {
     display: flex;
     height: 100vh;
     flex-direction: column;
+    justify-content: space-evenly;
     background-color: powderblue;
 }
 
@@ -18,26 +19,26 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    justify-content: center;
     /* Pushes the footer down */
-    text-align: center;
     min-width: fit-content;
     border: solid black 5px;
+    gap: 1px;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: nowrap;
-    margin: auto;
-    border: solid black 1px;
-    
+    gap: 1px;
+    flex-wrap: nowrap; 
 }
 
 .cell {
-    border: solid black 5px;
+    border: solid black 1px;
     background-color: aqua;
-    padding: 2px;
+    padding: 10px;
 }
