@@ -1,4 +1,3 @@
-//Javascript file
 let gridSize = 4;
 
 const button = document.getElementById("button");
@@ -25,7 +24,6 @@ const createGrid = (gridSize) => {
         for (let i = 0; i < gridSize; i++) {
             const cell = document.createElement("div");
             cell.classList.add("cell");
-            cell.textContent = "CELL";
             row.appendChild(cell);
         }
     }

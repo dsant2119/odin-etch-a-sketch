@@ -8,7 +8,7 @@ body {
     height: 100vh;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: powderblue;
+    background-color: black;
 }
 
 header {
@@ -30,28 +30,29 @@ header {
     flex-direction: column;
     flex: 1;
     justify-content: center;
-    /* Pushes the footer down */
-    min-width: fit-content;
-    border: solid black 5px;
-    gap: 1px;
+    max-width: 960px;
+    min-width: 960px;
+    margin: auto;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 1px;
+    /* gap: 1px; */
+    max-width: 960px;
     flex-wrap: nowrap; 
+    flex: 1;
 }
 
 .cell {
     border: solid black 1px;
     background-color: aqua;
-    padding: 10px;
+    flex: 1;
 }
 
 .hovered-cell {
     border: solid black 1px;
     background-color: white;
-    padding: 10px;
+    flex: 1;
 }
