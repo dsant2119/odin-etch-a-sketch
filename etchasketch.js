@@ -1,9 +1,14 @@
 //Javascript file
-
 let gridSize = 4;
+
+const button = document.getElementById("button");
+button.addEventListener("click", () => {
+    gridSize = prompt("Enter your desired height: ", "Enter height here");
+});
 
 const createGrid = (gridSize) => {
     const container = document.querySelector(".container");
+    
 
     for (let i = 0; i < gridSize; i++) {
         const row = document.createElement("div");
@@ -25,7 +30,6 @@ const createGrid = (gridSize) => {
         });
     });
 }
-
 
 
 createGrid(gridSize);
