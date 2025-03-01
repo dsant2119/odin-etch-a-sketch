@@ -42,3 +42,9 @@ body {
     background-color: aqua;
     padding: 10px;
 }
+
+.hovered-cell {
+    border: solid black 1px;
+    background-color: white;
+    padding: 10px;
+}
