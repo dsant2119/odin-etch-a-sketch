@@ -1,9 +1,13 @@
-let gridSize = 4;
+let gridSize = 16;
+let givenSize = 0;
 
 const button = document.getElementById("button");
 button.addEventListener("click", () => {
-    gridSize = prompt("Enter your desired height: ", "Enter height here");
-    createGrid(gridSize);
+    givenSize = prompt("Enter your desired height: ", "Enter height here");
+    while (givenSize > 64 || givenSize < 1)
+        givenSize = prompt("Invalid size given. Grid height must be between 1 and 64, inclusive!", "Enter height here")
+
+    createGrid(givenSize)
 });
 
 const createGrid = (gridSize) => {
