@@ -5,11 +5,23 @@
 
 body {
     display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background-color: powderblue;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 
 .container {
-    height: 100vh;
-    margin: auto;
+    flex: 1;
+    /* Pushes the footer down */
+    text-align: center;
+    min-width: fit-content;
     border: solid black 5px;
 }
 

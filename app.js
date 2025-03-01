@@ -1,3 +1,19 @@
 //Javascript file
 
-console.log("Hello David");
+let gridSize = 4;
+
+const createGrid = (gridSize) => {
+    console.log("Create grid was called!");
+    const container = document.querySelector(".container");
+
+    for (let i = 0; i < gridSize; i++) {
+        console.log("Creating a row!");
+        const row = document.createElement("div");
+        row.classList.add("row");
+        row.textContent = "THIS IS A ROW";
+        container.appendChild(row);
+    }
+
+}
+
+createGrid(gridSize);
