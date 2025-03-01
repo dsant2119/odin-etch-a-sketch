@@ -1,6 +1,8 @@
 let gridSize = 16;
 let givenSize = 0;
 
+// NOTE: EXTRA CREDIT NOT DONE
+
 const button = document.getElementById("button");
 button.addEventListener("click", () => {
     givenSize = prompt("Enter your desired height: ", "Enter height here");
@@ -38,6 +40,7 @@ const createGrid = (gridSize) => {
             cell.classList.add("hovered-cell");
         });
     });
+    //  Color cell when hovered over
 }
 
 
