@@ -11,6 +11,13 @@ body {
     background-color: powderblue;
 }
 
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
 .footer {
     background-color: #333;
     color: white;
