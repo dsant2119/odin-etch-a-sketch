@@ -10,13 +10,17 @@ const getRandomColor = () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    createGrid(gridSize);   // Create initial grid
+
     const button = document.getElementById("button");
+
     button.addEventListener("click", () => {
-        givenSize = prompt("Enter your desired height: ", "Enter height here");
+        givenSize = prompt("Enter your desired height (1-64)", "Enter height here");
+
         while (givenSize > 64 || givenSize < 1)
             givenSize = prompt("Invalid size given. Grid height must be between 1 and 64, inclusive!", "Enter height here")
 
-        createGrid(givenSize)
+        createGrid(givenSize);  // Create a new grid with the given size
     });
 });
 
@@ -35,8 +39,6 @@ const attachCellListeners = () => {
 
 const createGrid = (gridSize) => {
     const container = document.querySelector(".container");
-    let child = container.lastElementChild; //get last child in list
-
     container.innerHTML = "";
     //  Remove previous grid to create new one
 
@@ -53,6 +55,3 @@ const createGrid = (gridSize) => {
     }
     attachCellListeners();
 }
-
-
-createGrid(gridSize);
