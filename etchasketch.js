@@ -5,24 +5,10 @@ let givenSize = 0;
 // Tasks: 1. Randomize cell color upon touch. 
 //        2. Implement an incremental opacity increase for each touch. 
 
+//  Generates random hex color
 const getRandomColor = () => {
-    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;   // Generates random hex color
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    createGrid(gridSize);   // Create initial grid
-
-    const button = document.getElementById("button");
-
-    button.addEventListener("click", () => {
-        givenSize = prompt("Enter your desired height (1-64)", "Enter height here");
-
-        while (givenSize > 64 || givenSize < 1)
-            givenSize = prompt("Invalid size given. Grid height must be between 1 and 64, inclusive!", "Enter height here")
-
-        createGrid(givenSize);  // Create a new grid with the given size
-    });
-});
 
 //  Adds event listeners to each cell
 const attachCellListeners = () => {
@@ -36,7 +22,7 @@ const attachCellListeners = () => {
     //  Color cell when hovered over
 };
 
-
+//  Create grid function
 const createGrid = (gridSize) => {
     const container = document.querySelector(".container");
     container.innerHTML = "";
@@ -55,3 +41,19 @@ const createGrid = (gridSize) => {
     }
     attachCellListeners();
 }
+
+//  This only runs after DOM is loaded. This drives the game. 
+document.addEventListener("DOMContentLoaded", () => {
+    createGrid(gridSize);   //  Create initial grid
+
+    const button = document.getElementById("button");
+
+    button.addEventListener("click", () => {
+        givenSize = prompt("Enter your desired height (1-64)", "Enter height here");
+
+        while (givenSize > 64 || givenSize < 1)
+            givenSize = prompt("Invalid size given. Grid height must be between 1 and 64, inclusive!", "Enter height here")
+
+        createGrid(givenSize);  //  Create a new grid with the given size
+    });
+});
