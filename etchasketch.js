@@ -2,6 +2,8 @@ let gridSize = 16;
 let givenSize = 0;
 
 // NOTE: EXTRA CREDIT NOT DONE
+// Tasks: 1. Randomize cell color upon touch. 
+//        2. Implement an incremental opacity increase for each touch. 
 
 const button = document.getElementById("button");
 button.addEventListener("click", () => {
