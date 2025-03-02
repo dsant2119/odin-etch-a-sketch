@@ -2,7 +2,7 @@ let gridSize = 16;
 let givenSize = 0;
 
 // NOTE: EXTRA CREDIT NOT DONE
-// Tasks: 1. Randomize cell color upon touch. 
+// Tasks: 1. Randomize cell color upon touch. - DONE
 //        2. Implement an incremental opacity increase for each touch. 
 
 //  Generates random hex color
@@ -15,8 +15,10 @@ const attachCellListeners = () => {
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
         cell.addEventListener("mouseover", () => {
-            // cell.classList.add("hovered-cell");
             cell.style.backgroundColor = getRandomColor();  //works!!
+            cell.classList.add("hovered-cell");
+            let currentOpacity = getComputedStyle(cell).getPropertyValue("opacity");
+            cell.style.opacity = (currentOpacity + 0.1).toFixed(2);
         });
     });
     //  Color cell when hovered over

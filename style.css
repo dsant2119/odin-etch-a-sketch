@@ -52,6 +52,7 @@ header {
 
 .hovered-cell {
     border: solid black 1px;
-    background-color: white;
     flex: 1;
+    opacity: 0.0;
+    transition: opacity 0.2s ease-in-out; /* Smooth transition */
 }
