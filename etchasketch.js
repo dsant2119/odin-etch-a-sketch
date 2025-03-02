@@ -9,23 +9,35 @@ const getRandomColor = () => {
     return `#${Math.floor(Math.random() * 16777215).toString(16)}`;   // Generates random hex color
 }
 
-const button = document.getElementById("button");
-button.addEventListener("click", () => {
-    givenSize = prompt("Enter your desired height: ", "Enter height here");
-    while (givenSize > 64 || givenSize < 1)
-        givenSize = prompt("Invalid size given. Grid height must be between 1 and 64, inclusive!", "Enter height here")
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("button");
+    button.addEventListener("click", () => {
+        givenSize = prompt("Enter your desired height: ", "Enter height here");
+        while (givenSize > 64 || givenSize < 1)
+            givenSize = prompt("Invalid size given. Grid height must be between 1 and 64, inclusive!", "Enter height here")
 
-    createGrid(givenSize)
+        createGrid(givenSize)
+    });
 });
+
+//  Adds event listeners to each cell
+const attachCellListeners = () => {
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach((cell) => {
+        cell.addEventListener("mouseover", () => {
+            // cell.classList.add("hovered-cell");
+            cell.style.backgroundColor = getRandomColor();  //works!!
+        });
+    });
+    //  Color cell when hovered over
+};
+
 
 const createGrid = (gridSize) => {
     const container = document.querySelector(".container");
     let child = container.lastElementChild; //get last child in list
 
-    while (child) {
-        container.removeChild(child);
-        child = container.lastElementChild;
-    }
+    container.innerHTML = "";
     //  Remove previous grid to create new one
 
     for (let i = 0; i < gridSize; i++) {
@@ -39,15 +51,7 @@ const createGrid = (gridSize) => {
             row.appendChild(cell);
         }
     }
-
-    const cells = document.querySelectorAll(".cell");
-    cells.forEach((cell) => {
-        cell.addEventListener("mouseover", () => {
-            // cell.classList.add("hovered-cell");
-            cell.style.backgroundColor = getRandomColor();  //works!!
-        });
-    });
-    //  Color cell when hovered over
+    attachCellListeners();
 }
 
 
