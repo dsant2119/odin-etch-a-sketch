@@ -5,6 +5,10 @@ let givenSize = 0;
 // Tasks: 1. Randomize cell color upon touch. 
 //        2. Implement an incremental opacity increase for each touch. 
 
+const getRandomColor = () => {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;   // Generates random hex color
+}
+
 const button = document.getElementById("button");
 button.addEventListener("click", () => {
     givenSize = prompt("Enter your desired height: ", "Enter height here");
@@ -39,7 +43,8 @@ const createGrid = (gridSize) => {
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
         cell.addEventListener("mouseover", () => {
-            cell.classList.add("hovered-cell");
+            // cell.classList.add("hovered-cell");
+            cell.style.backgroundColor = getRandomColor();  //works!!
         });
     });
     //  Color cell when hovered over
