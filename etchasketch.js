@@ -15,7 +15,7 @@ const attachCellListeners = () => {
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
         cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = getRandomColor();  //works!!
+            cell.style.backgroundColor = getRandomColor();
             cell.classList.add("hovered-cell");
             let currentOpacity = getComputedStyle(cell).getPropertyValue("opacity");
             cell.style.opacity = (currentOpacity + 0.1).toFixed(2);
